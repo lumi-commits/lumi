@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<!-- saved from url=(0242)file:///C:/Users/kaich/OneDrive/Desktop/%E5%9F%A4%E5%A1%98/%E5%85%AB%E5%BE%B7%E5%9F%A4%E5%A1%98%E7%94%9F%E6%85%8B%E8%88%87%E5%9C%B0%E6%99%AF%E8%B3%87%E6%96%99%E5%BA%AB%20-%20%E5%AE%8C%E6%95%B4%E4%BA%92%E5%8B%95%E5%B0%8D%E6%87%89%E7%89%88.html -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八德埤塘生態與地景資料庫 - 完整互動對應版</title>
+    <style>
+        /* 全域變數與重設 */
+        :root {
+            --primary-color: #2c5e43;      /* 深自然綠 */
+            --secondary-color: #3d8c70;    /* 埤塘水綠色 */
+            --accent-color: #df7a32;       /* 泥土/生態暖橘點綴色 */
+            --bg-color: #f4f7f5;           /* 淡綠灰背景 */
+            --card-bg: #ffffff;
+            --text-main: #2b3a32;          /* 深墨綠文字 */
+            --text-muted: #607368;
+            --border-color: #d1ded6;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header 樣式 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Nav 導覽列與多層級選單 */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: none;
+            width: 100%;
+            text-align: left;
+            position: relative;
+        }
+
+        .menu-btn::after {
+            content: '☰';
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* 第一層選單 */
+        .menu-bar {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu-item > a {
+            display: block;
+            padding: 16px 20px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .menu-item > a:hover {
+            color: var(--primary-color);
+            background-color: rgba(61, 140, 112, 0.08);
+        }
+
+        /* 第二層下拉選單 */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 240px;
+            list-style: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 0 0 6px 6px;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f0f5f2;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .dropdown-menu li:last-child a {
+            border-bottom: none;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #f0f7f4;
+            color: var(--secondary-color);
+            padding-left: 25px;
+        }
+
+        /* 電腦版懸浮顯示下拉選單 */
+        @media (min-width: 992px) {
+            .menu-item:hover .dropdown-menu {
+                display: block;
+            }
+            .has-submenu > a::after {
+                content: ' ▾';
+                font-size: 0.8rem;
+                opacity: 0.7;
+            }
+        }
+
+        /* Main 主體內容與卡片佈局 */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+
+        /* Grid 卡片系統 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(44, 94, 67, 0.12);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 66.67%; /* 3:2 比例 */
+            background-color: #e2ede6;
+            overflow: hidden;
+        }
+
+        .card-image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image-wrapper img { transform: scale(1.06); }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(44, 94, 67, 0.85);
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+            font-weight: 500;
+        }
+
+        .card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-cta {
+            display: block;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 4px rgba(44, 94, 67, 0.15);
+            cursor: pointer;
+        }
+
+        .card-cta:hover {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 8px rgba(61, 140, 112, 0.25);
+        }
+
+        /* 頁籤隱藏與顯示的核心機制 */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 詳細內容區樣式 */
+        .detail-block {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            margin-top: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+        }
+
+        .detail-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .detail-header h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .author-tag {
+            background-color: #f0f7f4;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .report-p {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .inner-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        @media (min-width: 768px) { .inner-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .sub-info-card {
+            background-color: #fbfdfc;
+            border: 1px solid #e6f0ea;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .sub-info-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 8px;
+            font-size: 1.15rem;
+        }
+
+        /* 地圖模擬外觀 */
+        .map-box {
+            width: 100%;
+            height: 400px;
+            background-color: #eaf2ee;
+            border: 2px dashed var(--secondary-color);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        /* 數據表格 */
+        .table-style {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .table-style th, .table-style td {
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .table-style th { background-color: #f0f7f4; color: var(--primary-color); font-weight: 700; }
+
+        /* 互動測驗 */
+        .quiz-box {
+            background-color: #fbfdfc;
+            border: 1px solid #e2ede7;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        .quiz-q { font-weight: 700; margin-bottom: 15px; font-size: 1.1rem; }
+        .quiz-opts { list-style: none; padding-left: 5px; margin-bottom: 20px; }
+        .quiz-opts li { margin-bottom: 12px; }
+        .quiz-opts label { cursor: pointer; display: flex; align-items: center; gap: 10px; }
+        .blank-field { padding: 6px 12px; border: 1px solid var(--border-color); border-radius: 4px; text-align: center; width: 160px; font-size: 1rem; }
+        .submit-btn { background-color: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 0.95rem; }
+        .submit-btn:hover { background-color: var(--secondary-color); }
+        .ans-feedback { margin-top: 15px; font-weight: 700; display: none; padding: 10px; border-radius: 4px; }
+
+        /* 返回按鈕 */
+        .back-home-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .back-home-btn:hover { background-color: var(--primary-color); }
+
+        /* Footer 樣式 */
+        footer {
+            background-color: #1e3327;
+            color: #d1ded6;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--secondary-color);
+            margin-top: 60px;
+        }
+
+        footer p { margin-bottom: 8px; }
+        footer .footer-links { margin-top: 12px; }
+        footer .footer-links a { color: #a4bfae; text-decoration: none; margin: 0 10px; transition: color 0.2s; cursor: pointer; }
+        footer .footer-links a:hover { color: white; }
+
+        /* RWD 響應式優化 */
+        @media (max-width: 991px) {
+            header { padding: 30px 15px; }
+            .menu-btn { display: block; }
+            .menu-bar { display: none; flex-direction: column; background-color: #ffffff; border-top: 1px solid var(--border-color); }
+            #menu-toggle:checked ~ .menu-bar { display: flex; }
+            .menu-item { width: 100%; border-bottom: 1px solid #f0f5f2; }
+            .menu-item > a { padding: 14px 20px; }
+            .dropdown-menu { display: block; position: static; box-shadow: none; border: none; background-color: #fcfdfe; padding-left: 15px; border-radius: 0; }
+            .dropdown-menu li a { padding: 10px 20px; font-size: 0.9rem; }
+            main { margin: 25px auto; }
+            .detail-block { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>八德埤塘生態與地景資料庫</h1>
+        <p>探索千塘之鄉的歷史記憶與永續未來</p>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-btn">瀏覽資料庫目錄</label>
+            
+            <ul class="menu-bar">
+                <li class="menu-item"><a onclick="switchTab(&#39;about&#39;)">關於</a></li>
+                <li class="menu-item"><a onclick="switchTab(&#39;map&#39;)">地圖</a></li>
+                
+                <li class="menu-item has-submenu">
+                    <a>歷史與文化</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="switchTab(&#39;history-story&#39;)">起源故事 (周怡君)</a></li>
+                        <li><a onclick="switchTab(&#39;history-life&#39;)">周邊生活 (周怡君)</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item has-submenu">
+                    <a>生態調查</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="switchTab(&#39;eco-plants&#39;)">植物 (周怡君)</a></li>
+                        <li><a onclick="switchTab(&#39;eco-fauna&#39;)">動物與鳥類 (周怡君)</a></li>
+                        <li><a onclick="switchTab(&#39;eco-animals&#39;)">動物 (周怡君)</a></li>
+                        <li><a onclick="switchTab(&#39;eco-birds&#39;)">鳥類 (周怡君)</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item has-submenu">
+                    <a>昆蟲與水質</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="switchTab(&#39;ins-bugs&#39;)">昆蟲 (周怡君)</a></li>
+                        <li><a onclick="switchTab(&#39;ins-water&#39;)">水質 (周怡君)</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item has-submenu">
+                    <a>地景與水利</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="switchTab(&#39;land-water-sys&#39;)">給水系統 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab(&#39;land-structures&#39;)">關鍵構造 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab(&#39;land-logic&#39;)">分水邏輯 (劉芳汝)</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item has-submenu">
+                    <a>變遷與現狀</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="switchTab(&#39;chg-land&#39;)">土地變化 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab(&#39;chg-transformation&#39;)">轉型功能 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab(&#39;chg-challenges&#39;)">面臨挑戰 (劉芳汝)</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item has-submenu">
+                    <a>互動任務</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="switchTab(&#39;task-multiple-choice&#39;)">選擇題 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab(&#39;task-fill-blank&#39;)">填充題 (劉芳汝)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        
+        <div id="tab-about" class="tab-content active">
+            <h2 class="section-title">精選常見鳥類入口</h2>
+            <p class="section-desc">以下展示符合實際物種外觀的生態照片。點選卡片按鈕，可直接切換至詳細的觀測與生態報告。</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-badge">留鳥</span>
+                        <img src="./八德埤塘生態與地景資料庫 - 完整互動對應版_files/Egretta_garzetta_EM1B0094_(47336068462).jpg" alt="小白鷺">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">小白鷺 (Little Egret)</h3>
+                        <p class="card-text">埤塘最常見的涉禽之一，全身羽毛潔白，黑嘴、黃腳掌。常在淺水區漫步，利用腳趾抖動攪動泥沙來捕捉小魚蝦。</p>
+                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-badge">冬候鳥</span>
+                        <img src="./八德埤塘生態與地景資料庫 - 完整互動對應版_files/Northern_shoveler_Steve_Sinclair_outreach_use_only_(19838806616).jpg" alt="琵嘴鴨">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">琵嘴鴨 (Northern Shoveler)</h3>
+                        <p class="card-text">擁有如琵琶般獨特且巨大的湯匙狀嘴喙。每年冬季會大量群聚於平靜的埤塘深水區，透過濾食方式採集水面浮游生物。</p>
+                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-badge">留鳥</span>
+                        <img src="./八德埤塘生態與地景資料庫 - 完整互動對應版_files/320" alt="紅冠水雞">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">紅冠水雞 (Common Moorhen)</h3>
+                        <p class="card-text">額頭擁有鮮艷的紅斑，身體為黑褐色。牠們適應力極強，常在埤塘邊緣的浮葉植物與蘆葦叢間築巢繁衍。</p>
+                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-badge">冬候鳥</span>
+                        <img src="./八德埤塘生態與地景資料庫 - 完整互動對應版_files/Héron_cendré_DSCF1138.jpg" alt="蒼鷺">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">蒼鷺 (Grey Heron)</h3>
+                        <p class="card-text">臺灣體型最大的鷺科鳥類，外型呈優雅的灰藍色。在埤塘岸邊常長時間佇立不動，如同一尊雕像般靜候獵物游過。</p>
+                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-badge">過境鳥</span>
+                        <img src="./八德埤塘生態與地景資料庫 - 完整互動對應版_files/320(1)" alt="高蹺鴴">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">高蹺鴴 (Black-winged Stilt)</h3>
+                        <p class="card-text">擁有令人驚豔的修長紅腿與細長黑嘴，黑白對比羽色高雅。主要棲息於淺灘與休耕後的埤塘濕地，步伐輕盈優美。</p>
+                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-badge">留鳥</span>
+                        <img src="./八德埤塘生態與地景資料庫 - 完整互動對應版_files/1.JPG" alt="翠鳥">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">翠鳥 (Common Kingfisher)</h3>
+                        <p class="card-text">背部羽毛在陽光下泛著耀眼的翠藍色金屬光澤。常棲息於埤塘旁的枝條上，一旦發現目標便會以極高速度俯衝入水捕魚。</p>
+                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-map" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁鳥類入口</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>地理導覽：八德生態埤塘公園空間地圖</h3>
+                    <span class="author-tag">空間組編製</span>
+                </div>
+                <p class="report-p">八德生態埤塘公園（古稱副心埤）佔地面積大約 5 公頃。整個園區的水體構造呈東西向狹長延伸。核心規劃包含了十道「人工生態淨化池水質過濾系統」，並於東側匯集成開放的大型水鳥棲息深水埤塘。周邊設有環池高架木棧道以及高空鳥類觀察涼亭，完美結合了自然採樣與市民親水機能。</p><a href="https://maps.app.goo.gl/cZ6k19gxpEvjBwfz8" target="_blank" style="color: #0066cc; text-decoration: underline; font-weight: bold; cursor: pointer;">八德生態埤塘公園空間地圖</a><div id="tab-map" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁鳥類入口</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>地理導覽：八德生態埤塘公園空間地圖</h3>
+                    <span class="author-tag">空間組編製</span>
+                </div>
+                <p class="report-p">八德生態埤塘公園（古稱副心埤）佔地面積大約 5 公頃。整個園區的水體構造呈東西向狹長延伸。核心規劃包含了十道「人工生態淨化池水質過濾系統」，並於東側匯集成開放的大型水鳥棲息深水埤塘。</p>
+                
+                <div style="margin-top: 30px; padding: 20px; background-color: #ffffff; border: 1px dashed var(--border-color); border-radius: 6px;">
+                    <p class="report-p" style="margin-bottom: 10px; font-weight: bold;">🗺️ 請點擊下方官方地圖網址連結以開啓互動地圖：</p>
+                    
+                    <a href="https://maps.app.goo.gl/P8Z8wz79WNuWhbCH6" target="_blank" style="color: #df7a32; font-size: 1.1rem; font-weight: 600; text-decoration: underline; word-break: break-all; cursor: pointer;">
+                        https://maps.app.goo.gl/P8Z8wz79WNuWhbCH6
+                    </a>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 15px;">
+                    💡 提示：點擊上方網址連結後，瀏覽器會自動開啟新分頁，帶您直接進入八德生態埤塘公園的 Google 互動式地圖頁面。
+                </p>
+            </div>
+        </div>
+                
+            </div>
+        </div>
+
+        <div id="tab-history-story" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>歷史與文化：起源故事</h3>
+                    <span class="author-tag">田野調查負責：周怡君</span>
+                </div>
+                <p class="report-p"><strong>千塘之鄉的開墾血淚：</strong>桃園台地因地形平坦，缺乏大型且穩定的高山溪流經過，且地質成分多為紅土、吸水性極差、蓄水極為不易。早期的漢人移墾先民深受旱災之苦。到了清代乾隆年間，移墾漢人與當地的平埔族霄裡社原住民共同展開合作，順應台地的等高線微地形，動用大量人工開挖挖掘漥地以儲存寶貴的雨水，開啟了桃園「千塘之鄉」的宏偉故事。</p>
+                <p class="report-p"><strong>副心埤的古老身世：</strong>本公園水體的前身古名為「副心埤」，是早年由開墾先民串聯大漢溪與舊「霄裡大圳」灌溉水系中的一座核心調節性埤塘。在過去的水利農村社會中，這座埤塘在秋收時節的水位蓄留量，直接維蹟了周邊數百甲水稻田的生死收成與聚落繁衍。</p>
+            </div>
+        </div>
+
+        <div id="tab-history-life" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>歷史與文化：周邊常民生活</h3>
+                    <span class="author-tag">田野調查負責：周怡君</span>
+                </div>
+                <p class="report-p"><strong>緊密的水利自治體：</strong>圍繞著副心埤，早年八德地區的各個村落與宗族發展出了極為嚴密的「水利組合」自治社會制度。庄內的農民不分派系，每年春耕前皆必須全體出動，共同清理、手挖掏除埤底累積的厚重淤泥、共同修補崩塌的池堤，形成了命運相連、同舟共濟的常民生命共同體。</p>
+                <p class="report-p"><strong>田野耆老訪談軌跡：</strong>根據周怡君團隊實地走訪當地高齡耆老得到的口述歷史，過去清晨時分，村落裡的婦女們會結伴在埤塘淺水踏石處一邊擣衣洗滌、一邊交流庄內八卦；烈日正午，農夫則會牽引疲憊的水牛下池泡水消暑；孩童們則在池邊捉魚摸蝦。每逢農曆七月的「埤頭祭」更是全庄殺豬宰羊拜謝水神的盛事，深刻展現了昔日人、水、土地和諧共生的人文地景。</p>
+            </div>
+        </div>
+
+        <div id="tab-eco-plants" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>生態調查：水生植物群落觀測報告</h3>
+                    <span class="author-tag">調查負責：周怡君</span>
+                </div>
+                <p class="report-p">經過現地樣區的交叉採樣，八德埤塘共記錄到高達 120 餘種原生與外來植物。研究團隊將其水生植物依空間分佈精準劃分為三大核心群落：</p>
+                <div class="inner-grid">
+                    <div class="sub-info-card">
+                        <h4>1. 挺水植物群落 (岸邊淺灘區)</h4>
+                        <p>代表物種包含<strong>大安水蓑衣</strong>（台灣特有種、瀕危保育級）、香蒲、野慈姑。其發達粗壯的植物根系能牢牢抓緊土堤，防範大雨時的土堤沖塌。</p>
+                    </div>
+                    <div class="sub-info-card">
+                        <h4>2. 浮葉與漂浮植物群落 (平靜中水域)</h4>
+                        <p>代表物種包含<strong>台灣萍蓬草</strong>（台灣原生特有種，黃色小花終年綻放）、睡蓮、水鱉與大萍。大面積浮葉能遮蔽過量陽光，有效抑制埤塘水體中藍綠藻類的過度滋生優養化。</p>
+                    </div>
+                </div>
+                <p class="report-p" style="margin-top: 15px;">另外在深水區則有金魚藻、水蘊草等<strong>沉水植物</strong>。它們的葉片能高效吸附、吸收水中多餘的硝酸鹽與磷酸鹽，是埤塘最天然的生物淨水器。</p>
+            </div>
+        </div>
+
+        <div id="tab-eco-fauna" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>生態調查：野生動物與鳥類相總覽</h3>
+                    <span class="author-tag">調查負責：周怡君</span>
+                </div>
+                <p class="report-p">由於八德生態埤塘公園緊鄰北台灣核心的候鳥南遷北徙線，且在公園開闢與後續維護規劃上，刻意保留了大量「人為不可進入」的濃密次生灌木叢、林帶與深水沼澤區，因而建構出了一個多層次、健全的生態系統。經團隊長期季度監測，此處食物網結構健全，提供各類涉禽、游禽、陸鳥以及兩棲爬蟲類絕佳的覓食、避敵與繁衍空間，是都市重劃區中極為罕見且珍貴的野生動物荒野綠洲。</p>
+            </div>
+        </div>
+
+        <div id="tab-eco-animals" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>生態調查：兩棲爬蟲與魚類詳細報告</h3>
+                    <span class="author-tag">調查負責：周怡君</span>
+                </div>
+                <div class="inner-grid">
+                    <div class="sub-info-card">
+                        <h4>兩棲與爬蟲類 (Herpetofauna)</h4>
+                        <p><strong>兩棲類：</strong>以貢德氏赤蛙（俗稱狗蛙，叫聲宏亮如犬吠）、澤蛙、黑眶蟾蜍為絕對優勢種。夏季暴雨後的夜晚鳴聲如雷。<br>
+                           <strong>爬蟲類：</strong>台灣原生斑龜為水域大宗，常在晴天群聚於水面倒木曬太陽。林帶則有斯文豪氏攀蜥的穩定族群。</p>
+                    </div>
+                    <div class="sub-info-card">
+                        <h4>魚類與哺乳類 (Fauna)</h4>
+                        <p><strong>魚類：</strong>水體原生地層包含台灣石(魚賓)、鯽魚、大肚魚。然而田野調查也顯示，目前正面臨外來種吳郭魚與泰國鱧（魚虎）的捕食排擠威脅。<br>
+                           <strong>哺乳類：</strong>黃昏與夜間觀測記錄到台灣家蝠與東亞家蝠在水面上方低空飛掠、捕捉蚊蟲。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-eco-birds" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>生態調查：鳥類專題觀測報告</h3>
+                    <span class="author-tag">調查負責：周怡君</span>
+                </div>
+                <p class="report-p">本園區共記錄有超過 40 種以上之野生鳥類。除了首頁卡片展示的**小白鷺、琵嘴鴨、紅冠水雞、蒼鷺、高蹺鴴、翠鳥**之外，本區最令人驚艷的生態亮點莫過於**「鴛鴦 (Aix galericulata)」**。</p>
+                <p class="report-p">鴛鴦在台灣傳統的學術觀測上，一向被歸類為中高海拔山區湖泊（如雪山翠池、大雪山等）的稀有保育類留鳥。然而八德生態埤塘公園 because 環境隱蔽、林帶完整、水生昆蟲豐富，近年竟然成為全台極少數在平地低海拔都市公園成功留居、甚至集體求偶、築巢並繁衍下第二代的代表性低海拔生態奇蹟基地。</p>
+            </div>
+        </div>
+
+        <div id="tab-ins-bugs" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>昆蟲與水質：昆蟲多樣性生態報告</h3>
+                    <span class="author-tag">調查負責：周怡君</span>
+                </div>
+                <p class="report-p"><strong>盛夏的光蠟樹甲蟲大軍：</strong>公園南側林帶規劃了大量誘蝶蜜源植物，並擁有一整片茂密的光蠟樹（白雞油）次生林。每年 6 月至 8 月的盛夏，光蠟樹皮分泌的香甜樹液會吸引數以百計的**獨角仙**、兩點赤鍬形蟲與金龜子在此聚集。牠們在樹幹上啃食出縱向的條狀傷口，並為了爭奪配偶與地盤展開激烈的打鬥，是現地環境教育最受學生歡迎的實體亮點。</p>
+                <p class="report-p"><strong>水生昆蟲與天然生物防治：</strong>在平靜的水面與蘆葦叢間，則有猩紅蜻蜓、善變蜻蜓、青蜓以及多種豆娘（細蟌）穿梭飛行。蜻蛉目的稚蟲（水蠆）大量棲息於底泥與沉水植物間，牠們是蚊子幼蟲（孑孓）的頭號天敵，在埤塘生態系統中扮演了至關重要的天然生物防治角色。</p>
+            </div>
+        </div>
+
+        <div id="tab-ins-water" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>昆蟲與水質：生態工法淨化科學數據</h3>
+                    <span class="author-tag">調查負責：周怡君</span>
+                </div>
+                <p class="report-p">本園區最具科學教育價值之處，在於其完全不使用任何化學藥劑的**「自然生態工法水質過濾系統」**。引入外圍帶有民生排水與農業污染的渠道水源後，純粹利用地形等高線落差配合 10 道人工濕地池進行物理與生物學淨化：</p>
+                
+                <table class="table-style">
+                    <thead>
+                        <tr>
+                            <th>淨化階段</th>
+                            <th>核心構造 / 生物機制</th>
+                            <th>物理與化學效益</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. 前處理物理沉澱段</td>
+                            <td>第 1-3 池：沉砂池、微曝氣跌水階梯</td>
+                            <td>利用重力位能跌水，強力提升水中溶解氧(DO)，消減污水臭味並沉澱大顆粒泥沙。</td>
+                        </tr>
+                        <tr>
+                            <td>2. 微生物與植物吸附段</td>
+                            <td>第 4-7 池：挺水與浮葉濕地植物群落</td>
+                            <td>利用布袋蓮、大萍與蘆葦根部的發達微生物薄膜，高效率吸附水中超標的氮、磷元素。</td>
+                        </tr>
+                        <tr>
+                            <td>3. 深度澄清與放流段</td>
+                            <td>第 8-10 池：蜿蜒渠道與出水堰</td>
+                            <td>大幅降低懸浮固體物(SS)，放流水質經檢測完全達到國家級放流水化學需氧量標準。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="tab-land-water-sys" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>地景與水利：上游給水系統架構</h3>
+                    <span class="author-tag">調查負責：劉芳汝</span>
+                </div>
+                <p class="report-p"><strong>複雜的水網脈絡：</strong>八德生態埤塘的給水系統源頭，主要承接自歷史悠久的桃園大圳與霄裡大圳水網系統末端的分流渠道。這套系統屬於高效率的「重力自流灌溉網絡（Gravity-fed Irrigation System）」。</p>
+                <p class="report-p">引自大漢溪與石門水庫的水源，流經八德各庄農田進行灌溉後之餘水，偕同周邊社區的地表雨水逕流，透過縱橫交錯、順應地勢的地下與地上給水溝，源源不絕地匯集引流入本園區的人工濕地中，形成了一個動態的水循環網絡。</p>
+            </div>
+        </div>
+
+        <div id="tab-land-structures" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>地景與水利：四項關鍵水利構造物</h3>
+                    <span class="author-tag">調查負責：劉芳汝</span>
+                </div>
+                <p class="report-p">經水利工程組實地測量、拍照與定位，園區內完整保存並活用了多項傳統與現代交織的關鍵水利硬體構造：</p>
+                <div class="inner-grid">
+                    <div class="sub-info-card">
+                        <h4>1. 進水閘門與倒V型攔污柵</h4>
+                        <p>配置有傳統鑄鐵搖捲式手動水閘門。主要功能在於颱風或豪大雨來臨時控制進水量，防止洪水沖毀精密的人工濕地植物，並阻擋渠道漂流而來的垃圾雜物。</p>
+                    </div>
+                    <div class="sub-info-card">
+                        <h4>2. 梯級跌水堰與砌石消能池</h4>
+                        <p>利用當地卵石砌築而成的階梯狀堰體。水流經過時因高低落差產生劇烈擾動，進行自然曝氣以增加溶氧，同時消減水流速度，防止泥沙沖刷土堤護岸。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-land-logic" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>地景與水利：物理分水邏輯智慧</h3>
+                    <span class="author-tag">調查負責：劉芳汝</span>
+                </div>
+                <p class="report-p"><strong>無電力的先民物理智慧：</strong>傳統埤塘的分水完全不需要任何電子感測器、電腦晶片或耗電的抽水馬達，而是純粹運用精妙的物理與幾何水力學原理。當主埤塘的水位因為連續降雨而達到指定的安全滿水位標高時，水體便會自動溢過特定寬度的「寬頂溢流堰」或出水溢流孔，將多餘的洪水量自動導向副埤或下游排水分渠，自動完成防災調節。</p>
+                <p class="report-p"><strong>依田配水的公平契約：</strong>在歷史的水利組合制度中，分水更有其社會正義意義。先民會依據各家族下遊農田的開墾股權（稱為口分），在出水分水箱上開設比例不同的幾何孔口（如三分水、七分水），實現精準、公平的配水份額，展現了極高的地景水力智慧。</p>
+            </div>
+        </div>
+
+        <div id="tab-chg-land" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>變遷與現狀：土地利用變化歷程</h3>
+                    <span class="author-tag">調查負責：劉芳汝</span>
+                </div>
+                <p class="report-p"><strong>從千塘之鄉到水泥叢林：</strong>桃園台地在歷史最高峰時期曾擁有高達上萬座功能各異的埤塘。然而自 1970 年代起，隨著台灣產業全面向工商業轉型、都市計畫的大幅擴張以及工商業重劃區的相繼開發，八德區大面積的農地被變更為住宅與建地。在失去傳統農業灌溉需求後，大量埤塘遭到無情填平。</p>
+                <p class="report-p">在過去 50 年間，八德區的埤塘數量銳減了超過百分之八十。本公園所處的副心埤，是在地方文史工作者、環境學者與居民的極力奔走與爭取下，才成功在擴建的都市重劃區水泥叢林中保留下來的最後一塊綠色眼淚。</p>
+            </div>
+        </div>
+
+        <div id="tab-chg-transformation" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>變遷與現狀：現代多功能都市轉型</h3>
+                    <span class="author-tag">調查負責：劉芳汝</span>
+                </div>
+                <p class="report-p">副心埤成功由傳統單一功能的「農業灌溉水庫」，成功脫胎換骨轉型為複合型的現代生態地景公園，在今日具備三大核心都市防禦價值：</p>
+                <div class="inner-grid">
+                    <div class="sub-info-card">
+                        <h4>1. 都市防災滯洪冷島</h4>
+                        <p>面對極端氣候暴雨，埤塘可瞬間蓄納大雨地表逕流，削減下游都市排水管線的洪峰負荷。同時，因蒸發散作用，夏季園區內平均氣溫比周圍柏油路面低 1.5 至 2°C，能有效緩解熱島效應。</p>
+                    </div>
+                    <div class="sub-info-card">
+                        <h4>2. 重要濕地環境教育基地</h4>
+                        <p>本園區已成功獲得內政部認證為「國家級重要濕地環境教育基地」，每年提供數萬名中小學生及大專院校進行現地生態與水資源自然科學教學。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-chg-challenges" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>變遷與現狀：當前面臨的三大環境挑戰</h3>
+                    <span class="author-tag">調查負責：劉芳汝</span>
+                </div>
+                <p class="report-p">儘管已轉型為受到法律保護的生態公園，管理層與食物網目前仍面臨三大嚴峻考驗：</p>
+                <p class="report-p">1. <strong>外來物種毀滅性入侵：</strong>外來種巴西龜、福壽螺及泰國鱧（魚虎）大量繁衍，排擠了原生斑龜與台灣本土魚類的生存空間；林帶中甚至出現被遺棄的外來綠鬣蜥。</p>
+                <p class="report-p">2. <strong>季節性水體優養化：</strong>由於上游水源無可避免地引入了部分未經處理的民生生活污水，在夏季高溫、日照強烈時，易導致水中氮磷養分過剩，引發藻華現象，降低水中溶氧，危害魚類。</p>
+                <p class="report-p)、">3. <strong>遊客不文明餵食行為：</strong>部分遊客規勸不聽，攜帶麵包屑、飼料餵食園區內的野鴨與野鳥，不僅導致野鳥喪失野外覓食本能，殘留飼料與鳥類糞便更成為水質惡化優養化的頭號元兇。</p>
+            </div>
+        </div>
+
+        <div id="tab-task-multiple-choice" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>互動任務：環境教育線上知識競賽</h3>
+                    <span class="author-tag">互動設計：劉芳汝</span>
+                </div>
+                <div class="quiz-box">
+                    <div class="quiz-q">【單選題】Q1：關於八德生態埤塘公園內的水質過濾系統，下列敘述何者是正確的？</div>
+                    <ul class="quiz-opts">
+                        <li><label><input type="radio" name="q1" value="A"> A) 需要定期投入高濃度的化學漂白水與氯氣進行全面化學殺菌</label></li>
+                        <li><label><input type="radio" name="q1" value="B" id="q1-correct"> B) 純粹利用自然地形高度差自流曝氣，並透過十道人工濕地植物根部微生物薄膜吸附有害養分</label></li>
+                        <li><label><input type="radio" name="q1" value="C"> C) 這套系統需要耗費龐大的抽水機馬達電力維持，不符合低碳綠能原則</label></li>
+                    </ul>
+                    <button class="submit-btn" onclick="checkRadioQuiz()">提交選擇題答案</button>
+                    <div id="q1-result" class="ans-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-task-fill-blank" class="tab-content">
+            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <div class="detail-block">
+                <div class="detail-header">
+                    <h3>互動任務：地景歷史填充挑戰</h3>
+                    <span class="author-tag">互動設計：劉芳汝</span>
+                </div>
+                <div class="quiz-box">
+                    <div class="quiz-q">
+                        【填充題】Q2：根據劉芳汝與周怡君團隊的調查，八德生態埤塘公園在清代先民開墾灌溉網路時，其最古老的身世名字被稱為「<input type="text" id="q2-input" class="blank-field" placeholder="請填寫三個字"> 埤」。
+                    </div>
+                    <button class="submit-btn" onclick="checkBlankQuiz()">提交填充題答案</button>
+                    <div id="q2-result" class="ans-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>八德埤塘生態與地景多元資料庫 © 2026 研究團隊. 本網站內容由周怡君、劉芳汝協同調查編製</p>
+        <p style="font-size: 0.8rem; opacity: 0.7;">架構優化：解決跑版與空白問題之頁籤式互動網站規格</p>
+        <div class="footer-links">
+            <a onclick="switchTab(&#39;about&#39;)">返回首頁</a> | 
+            <a onclick="switchTab(&#39;map&#39;)">空間地圖</a> | 
+            <a onclick="switchTab(&#39;task-multiple-choice&#39;)">互動測驗</a>
+        </div>
+    </footer>
+
+    <script>
+        // 頁籤切換核心函式
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const targetTab = document.getElementById('tab-' + tabId);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+            
+            document.getElementById('menu-toggle').checked = false;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 選擇題即時驗證
+        function checkRadioQuiz() {
+            const isCorrect = document.getElementById('q1-correct').checked;
+            const resultDiv = document.getElementById('q1-result');
+            resultDiv.style.display = 'block';
+            if (isCorrect) {
+                resultDiv.innerHTML = "🎉 答對了！這套系統利用地形「高度差」自流與 10 道濕地植物過濾，零耗電、零化學藥劑，是極佳的生態工法！";
+                resultDiv.style.backgroundColor = "#e2ede7";
+                resultDiv.style.color = "#2c5e43";
+            } else {
+                resultDiv.innerHTML = "❌ 答錯囉！提示：這套系統是不需要加入化學藥劑的喔！可以去點閱選單中的【昆蟲與水質 - 水質】看答案！";
+                resultDiv.style.backgroundColor = "#fdf3eb";
+                resultDiv.style.color = "#df7a32";
+            }
+        }
+
+        // 填充題即時驗證
+        function checkBlankQuiz() {
+            const answer = document.getElementById('q2-input').value.trim();
+            const resultDiv = document.getElementById('q2-result');
+            resultDiv.style.display = 'block';
+            
+            if (answer === "副心埤" || answer === "副心") {
+                resultDiv.innerHTML = "🎉 完全正確！歷史上它被稱為「副心埤」，是串聯舊霄裡大圳水網至關重要的水利節點！";
+                resultDiv.style.backgroundColor = "#e2ede7";
+                resultDiv.style.color = "#2c5e43";
+            } else {
+                resultDiv.innerHTML = "❌ 答錯了！提示：可以去點閱選單中的【歷史與文化 - 起源故事】選項，裡面有寫到它以前的身世名字喔！";
+                resultDiv.style.backgroundColor = "#fdf3eb";
+                resultDiv.style.color = "#df7a32";
+            }
+        }
+    </script>
+
+
+</body></html>
