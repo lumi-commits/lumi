@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/kaich/OneDrive/Desktop/index.html -->
-<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>八德埤塘生態與地景資料庫 - 完整互動對應版</title>
     <style>
@@ -390,23 +390,6 @@
             font-size: 1.15rem;
         }
 
-        /* 地圖模擬外觀 */
-        .map-box {
-            width: 100%;
-            height: 400px;
-            background-color: #eaf2ee;
-            border: 2px dashed var(--secondary-color);
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--primary-color);
-            text-align: center;
-            padding: 20px;
-            margin-top: 15px;
-        }
-
         /* 數據表格 */
         .table-style {
             width: 100%;
@@ -498,58 +481,58 @@
             <label for="menu-toggle" class="menu-btn">瀏覽資料庫目錄</label>
             
             <ul class="menu-bar">
-                <li class="menu-item"><a onclick="switchTab(&#39;about&#39;)">關於</a></li>
-                <li class="menu-item"><a onclick="switchTab(&#39;map&#39;)">地圖</a></li>
+                <li class="menu-item"><a onclick="switchTab('about')">關於</a></li>
+                <li class="menu-item"><a onclick="switchTab('map')">地圖</a></li>
                 
                 <li class="menu-item has-submenu">
                     <a>歷史與文化</a>
                     <ul class="dropdown-menu">
-                        <li><a onclick="switchTab(&#39;history-story&#39;)">起源故事 (周怡君)</a></li>
-                        <li><a onclick="switchTab(&#39;history-life&#39;)">周邊生活 (周怡君)</a></li>
+                        <li><a onclick="switchTab('history-story')">起源故事 (周怡君)</a></li>
+                        <li><a onclick="switchTab('history-life')">周邊生活 (周怡君)</a></li>
                     </ul>
                 </li>
                 
                 <li class="menu-item has-submenu">
                     <a>生態調查</a>
                     <ul class="dropdown-menu">
-                        <li><a onclick="switchTab(&#39;eco-plants&#39;)">植物 (周怡君)</a></li>
-                        <li><a onclick="switchTab(&#39;eco-fauna&#39;)">動物與鳥類 (周怡君)</a></li>
-                        <li><a onclick="switchTab(&#39;eco-animals&#39;)">動物 (周怡君)</a></li>
-                        <li><a onclick="switchTab(&#39;eco-birds&#39;)">鳥類 (周怡君)</a></li>
+                        <li><a onclick="switchTab('eco-plants')">植物 (周怡君)</a></li>
+                        <li><a onclick="switchTab('eco-fauna')">動物與鳥類 (周怡君)</a></li>
+                        <li><a onclick="switchTab('eco-animals')">動物 (周怡君)</a></li>
+                        <li><a onclick="switchTab('eco-birds')">鳥類 (周怡君)</a></li>
                     </ul>
                 </li>
                 
                 <li class="menu-item has-submenu">
                     <a>昆蟲與水質</a>
                     <ul class="dropdown-menu">
-                        <li><a onclick="switchTab(&#39;ins-bugs&#39;)">昆蟲 (周怡君)</a></li>
-                        <li><a onclick="switchTab(&#39;ins-water&#39;)">水質 (周怡君)</a></li>
+                        <li><a onclick="switchTab('ins-bugs')">昆蟲 (周怡君)</a></li>
+                        <li><a onclick="switchTab('ins-water')">水質 (周怡君)</a></li>
                     </ul>
                 </li>
                 
                 <li class="menu-item has-submenu">
                     <a>地景與水利</a>
                     <ul class="dropdown-menu">
-                        <li><a onclick="switchTab(&#39;land-water-sys&#39;)">給水系統 (劉芳汝)</a></li>
-                        <li><a onclick="switchTab(&#39;land-structures&#39;)">關鍵構造 (劉芳汝)</a></li>
-                        <li><a onclick="switchTab(&#39;land-logic&#39;)">分水邏輯 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab('land-water-sys')">給水系統 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab('land-structures')">關鍵構造 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab('land-logic')">分水邏輯 (劉芳汝)</a></li>
                     </ul>
                 </li>
                 
                 <li class="menu-item has-submenu">
                     <a>變遷與現狀</a>
                     <ul class="dropdown-menu">
-                        <li><a onclick="switchTab(&#39;chg-land&#39;)">土地變化 (劉芳汝)</a></li>
-                        <li><a onclick="switchTab(&#39;chg-transformation&#39;)">轉型功能 (劉芳汝)</a></li>
-                        <li><a onclick="switchTab(&#39;chg-challenges&#39;)">面臨挑戰 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab('chg-land')">土地變化 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab('chg-transformation')">轉型功能 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab('chg-challenges')">面臨挑戰 (劉芳汝)</a></li>
                     </ul>
                 </li>
                 
                 <li class="menu-item has-submenu">
                     <a>互動任務</a>
                     <ul class="dropdown-menu">
-                        <li><a onclick="switchTab(&#39;task-multiple-choice&#39;)">選擇題 (劉芳汝)</a></li>
-                        <li><a onclick="switchTab(&#39;task-fill-blank&#39;)">填充題 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab('task-multiple-choice')">選擇題 (劉芳汝)</a></li>
+                        <li><a onclick="switchTab('task-fill-blank')">填充題 (劉芳汝)</a></li>
                     </ul>
                 </li>
             </ul>
@@ -566,87 +549,79 @@
                 <div class="card">
                     <div class="card-image-wrapper">
                         <span class="card-badge">留鳥</span>
-                        <img src="./index_files/Egretta_garzetta_EM1B0094_(47336068462).jpg" alt="小白鷺">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Little_egret_%28Egretta_garzetta%29.jpg/800px-Little_egret_%28Egretta_garzetta%29.jpg" alt="小白鷺">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">小白鷺 (Little Egret)</h3>
                         <p class="card-text">埤塘最常見的涉禽之一，全身羽毛潔白，黑嘴、黃腳掌。常在淺水區漫步，利用腳趾抖動攪動泥沙來捕捉小魚蝦。</p>
-                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                        <a onclick="switchTab('eco-birds')" class="card-cta">進入鳥類觀測報告</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-image-wrapper">
                         <span class="card-badge">冬候鳥</span>
-                        <img src="./index_files/Northern_shoveler_Steve_Sinclair_outreach_use_only_(19838806616).jpg" alt="琵嘴鴨">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Northern_Shoveler_RWD2.jpg/800px-Northern_Shoveler_RWD2.jpg" alt="琵嘴鴨">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">琵嘴鴨 (Northern Shoveler)</h3>
                         <p class="card-text">擁有如琵琶般獨特且巨大的湯匙狀嘴喙。每年冬季會大量群聚於平靜的埤塘深水區，透過濾食方式採集水面浮游生物。</p>
-                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                        <a onclick="switchTab('eco-birds')" class="card-cta">進入鳥類觀測報告</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-image-wrapper">
                         <span class="card-badge">留鳥</span>
-                        <img src="./index_files/320" alt="紅冠水雞">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Common_moorhen_%28Gallinula_chloropus%29_by_Shankar_S..jpg/800px-Common_moorhen_%28Gallinula_chloropus%29_by_Shankar_S..jpg" alt="紅冠水雞">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">紅冠水雞 (Common Moorhen)</h3>
                         <p class="card-text">額頭擁有鮮艷的紅斑，身體為黑褐色。牠們適應力極強，常在埤塘邊緣的浮葉植物與蘆葦叢間築巢繁衍。</p>
-                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                        <a onclick="switchTab('eco-birds')" class="card-cta">進入鳥類觀測報告</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-image-wrapper">
                         <span class="card-badge">冬候鳥</span>
-                        <img src="./index_files/Héron_cendré_DSCF1138.jpg" alt="蒼鷺">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Grey_Heron_at_the_Wetlands_Centre_London_-_July_2007.jpg/800px-Grey_Heron_at_the_Wetlands_Centre_London_-_July_2007.jpg" alt="蒼鷺">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">蒼鷺 (Grey Heron)</h3>
                         <p class="card-text">臺灣體型最大的鷺科鳥類，外型呈優雅的灰藍色。在埤塘岸邊常長時間佇立不動，如同一尊雕像般靜候獵物游過。</p>
-                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                        <a onclick="switchTab('eco-birds')" class="card-cta">進入鳥類觀測報告</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-image-wrapper">
                         <span class="card-badge">過境鳥</span>
-                        <img src="./index_files/320(1)" alt="高蹺鴴">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black-winged_Stilt_Himantopus_himantopus_by_Dr_S_K_Manik_02.jpg/800px-Black-winged_Stilt_Himantopus_himantopus_by_Dr_S_K_Manik_02.jpg" alt="高蹺鴴">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">高蹺鴴 (Black-winged Stilt)</h3>
-                        <p class="card-text">擁有令人驚豔的修長紅腿與細長黑嘴，黑白對比羽色高雅。主要棲息於淺灘與休耕後的埤塘濕地，步伐輕盈優美。</p>
-                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                        <p class="card-text">擁有令人驚豔的修長紅腿與細長黑嘴，黑白對比羽色高雅.主要棲息於淺灘與休耕後的埤塘濕地，步伐輕盈優美。</p>
+                        <a onclick="switchTab('eco-birds')" class="card-cta">進入鳥類觀測報告</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-image-wrapper">
                         <span class="card-badge">留鳥</span>
-                        <img src="./index_files/1.JPG" alt="翠鳥">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Common_Kingfisher_Alcedo_atthis.jpg/800px-Common_Kingfisher_Alcedo_atthis.jpg" alt="翠鳥">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">翠鳥 (Common Kingfisher)</h3>
                         <p class="card-text">背部羽毛在陽光下泛著耀眼的翠藍色金屬光澤。常棲息於埤塘旁的枝條上，一旦發現目標便會以極高速度俯衝入水捕魚。</p>
-                        <a onclick="switchTab(&#39;eco-birds&#39;)" class="card-cta">進入鳥類觀測報告</a>
+                        <a onclick="switchTab('eco-birds')" class="card-cta">進入鳥類觀測報告</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="tab-map" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁鳥類入口</a>
-            <div class="detail-block">
-                <div class="detail-header">
-                    <h3>地理導覽：八德生態埤塘公園空間地圖</h3>
-                    <span class="author-tag">空間組編製</span>
-                </div>
-                <p class="report-p">八德生態埤塘公園（古稱副心埤）佔地面積大約 5 公頃。整個園區的水體構造呈東西向狹長延伸。核心規劃包含了十道「人工生態淨化池水質過濾系統」，並於東側匯集成開放的大型水鳥棲息深水埤塘。周邊設有環池高架木棧道以及高空鳥類觀察涼亭，完美結合了自然採樣與市民親水機能。</p><iframe src="./index_files/embed.html" width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-</iframe><a href="https://maps.app.goo.gl/cZ6k19gxpEvjBwfz8" target="_blank" style="color: #0066cc; text-decoration: underline; font-weight: bold; cursor: pointer;">八德生態埤塘公園空間地圖</a><div id="tab-map" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁鳥類入口</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁鳥類入口</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>地理導覽：八德生態埤塘公園空間地圖</h3>
@@ -654,25 +629,21 @@
                 </div>
                 <p class="report-p">八德生態埤塘公園（古稱副心埤）佔地面積大約 5 公頃。整個園區的水體構造呈東西向狹長延伸。核心規劃包含了十道「人工生態淨化池水質過濾系統」，並於東側匯集成開放的大型水鳥棲息深水埤塘。</p>
                 
-                <div style="margin-top: 30px; padding: 20px; background-color: #ffffff; border: 1px dashed var(--border-color); border-radius: 6px;">
-                    <p class="report-p" style="margin-bottom: 10px; font-weight: bold;">🗺️ 請點擊下方官方地圖網址連結以開啓互動地圖：</p>
-                    
-                    <a href="https://maps.app.goo.gl/P8Z8wz79WNuWhbCH6" target="_blank" style="color: #df7a32; font-size: 1.1rem; font-weight: 600; text-decoration: underline; word-break: break-all; cursor: pointer;">
-                        https://maps.app.goo.gl/P8Z8wz79WNuWhbCH6
-                    </a>
-                </div>
-                
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 15px;">
-                    💡 提示：點擊上方網址連結後，瀏覽器會自動開啟新分頁，帶您直接進入八德生態埤塘公園的 Google 互動式地圖頁面。
-                </p>
-            </div>
-        </div>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.9734994272183!2d121.30612987613659!3d24.95001474099419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f21501d71cb%3A0xb3fcba10bf157777!2z5YWr5b635os_5aWh55Sf6YWL5YWs5ZyS!5e0!3m2!1szh-TW!2stw!4v1718974632000!5m2!1szh-TW!2stw" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 8px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
                 
             </div>
         </div>
 
         <div id="tab-history-story" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>歷史與文化：起源故事</h3>
@@ -684,7 +655,7 @@
         </div>
 
         <div id="tab-history-life" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>歷史與文化：周邊常民生活</h3>
@@ -696,7 +667,7 @@
         </div>
 
         <div id="tab-eco-plants" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>生態調查：水生植物群落觀測報告</h3>
@@ -718,7 +689,7 @@
         </div>
 
         <div id="tab-eco-fauna" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>生態調查：野生動物與鳥類相總覽</h3>
@@ -729,7 +700,7 @@
         </div>
 
         <div id="tab-eco-animals" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>生態調查：兩棲爬蟲與魚類詳細報告</h3>
@@ -751,7 +722,7 @@
         </div>
 
         <div id="tab-eco-birds" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>生態調查：鳥類專題觀測報告</h3>
@@ -763,7 +734,7 @@
         </div>
 
         <div id="tab-ins-bugs" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>昆蟲與水質：昆蟲多樣性生態報告</h3>
@@ -775,7 +746,7 @@
         </div>
 
         <div id="tab-ins-water" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>昆蟲與水質：生態工法淨化科學數據</h3>
@@ -798,7 +769,7 @@
                             <td>利用重力位能跌水，強力提升水中溶解氧(DO)，消減污水臭味並沉澱大顆粒泥沙。</td>
                         </tr>
                         <tr>
-                            <td>2. 微生物與植物吸附段</td>
+                            <td>2. 微微微生物與植物吸附段</td>
                             <td>第 4-7 池：挺水與浮葉濕地植物群落</td>
                             <td>利用布袋蓮、大萍與蘆葦根部的發達微生物薄膜，高效率吸附水中超標的氮、磷元素。</td>
                         </tr>
@@ -813,7 +784,7 @@
         </div>
 
         <div id="tab-land-water-sys" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>地景與水利：上游給水系統架構</h3>
@@ -825,7 +796,7 @@
         </div>
 
         <div id="tab-land-structures" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>地景與水利：四項關鍵水利構造物</h3>
@@ -846,7 +817,7 @@
         </div>
 
         <div id="tab-land-logic" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>地景與水利：物理分水邏輯智慧</h3>
@@ -858,7 +829,7 @@
         </div>
 
         <div id="tab-chg-land" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>變遷與現狀：土地利用變化歷程</h3>
@@ -870,7 +841,7 @@
         </div>
 
         <div id="tab-chg-transformation" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>變遷與現狀：現代多功能都市轉型</h3>
@@ -891,7 +862,7 @@
         </div>
 
         <div id="tab-chg-challenges" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>變遷與現狀：當前面臨的三大環境挑戰</h3>
@@ -900,12 +871,12 @@
                 <p class="report-p">儘管已轉型為受到法律保護的生態公園，管理層與食物網目前仍面臨三大嚴峻考驗：</p>
                 <p class="report-p">1. <strong>外來物種毀滅性入侵：</strong>外來種巴西龜、福壽螺及泰國鱧（魚虎）大量繁衍，排擠了原生斑龜與台灣本土魚類的生存空間；林帶中甚至出現被遺棄的外來綠鬣蜥。</p>
                 <p class="report-p">2. <strong>季節性水體優養化：</strong>由於上游水源無可避免地引入了部分未經處理的民生生活污水，在夏季高溫、日照強烈時，易導致水中氮磷養分過剩，引發藻華現象，降低水中溶氧，危害魚類。</p>
-                <p class="report-p)、">3. <strong>遊客不文明餵食行為：</strong>部分遊客規勸不聽，攜帶麵包屑、飼料餵食園區內的野鴨與野鳥，不僅導致野鳥喪失野外覓食本能，殘留飼料與鳥類糞便更成為水質惡化優養化的頭號元兇。</p>
+                <p class="report-p">3. <strong>遊客不文明餵食行為：</strong>部分遊客規勸不聽，攜帶麵包屑、飼料餵食園區內的野鴨與野鳥，不僅導致野鳥喪失野外覓食本能，殘留飼料與鳥類糞便更成為水質惡化優養化的頭號元兇。</p>
             </div>
         </div>
 
         <div id="tab-task-multiple-choice" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>互動任務：環境教育線上知識競賽</h3>
@@ -925,7 +896,7 @@
         </div>
 
         <div id="tab-task-fill-blank" class="tab-content">
-            <a class="back-home-btn" onclick="switchTab(&#39;about&#39;)">← 返回主頁</a>
+            <a class="back-home-btn" onclick="switchTab('about')">← 返回主頁</a>
             <div class="detail-block">
                 <div class="detail-header">
                     <h3>互動任務：地景歷史填充挑戰</h3>
@@ -947,9 +918,9 @@
         <p>八德埤塘生態與地景多元資料庫 © 2026 研究團隊. 本網站內容由周怡君、劉芳汝協同調查編製</p>
         <p style="font-size: 0.8rem; opacity: 0.7;">架構優化：解決跑版與空白問題之頁籤式互動網站規格</p>
         <div class="footer-links">
-            <a onclick="switchTab(&#39;about&#39;)">返回首頁</a> | 
-            <a onclick="switchTab(&#39;map&#39;)">空間地圖</a> | 
-            <a onclick="switchTab(&#39;task-multiple-choice&#39;)">互動測驗</a>
+            <a onclick="switchTab('about')">返回首頁</a> | 
+            <a onclick="switchTab('map')">空間地圖</a> | 
+            <a onclick="switchTab('task-multiple-choice')">互動測驗</a>
         </div>
     </footer>
 
@@ -1004,5 +975,5 @@
         }
     </script>
 
-
-</body></html>
+</body>
+</html>
